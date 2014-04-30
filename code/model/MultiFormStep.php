@@ -370,5 +370,15 @@ class MultiFormStep extends DataObject {
     public function isExitEnable(){
         return false;
     }
-	
+
+    /**
+     * overwrite this for hadle exit functionality
+     *
+     * @return boolean
+     */
+
+    public function exitStep($data,$form){
+        return False;
+    }
+
 }
