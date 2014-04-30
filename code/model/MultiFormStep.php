@@ -361,5 +361,14 @@ class MultiFormStep extends DataObject {
 	public function isCurrentStep() {
 		return ($this->class == $this->Session()->CurrentStep()->class) ? true : false;
 	}
+
+    /**
+     * Determines whether the exit functionality enable or not
+     *
+     * @return boolean
+     */
+    public function isExitEnable(){
+        return false;
+    }
 	
 }

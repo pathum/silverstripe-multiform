@@ -337,6 +337,10 @@ abstract class MultiForm extends Form {
 		} else {
 			$actions->push(new FormAction('next', $step->getNextText()));
 		}
+
+        //for exit action
+        if($step->isExitEnable())
+            $actions->push(new FormAction('exitStep', 'Exit'));
 		
 		// If there is a previous step defined, add the back button
 		if($step->getPreviousStep() && $step->canGoBack()) {
@@ -351,6 +355,7 @@ abstract class MultiForm extends Form {
 
 		// Merge any extra action fields defined on the step
 		$actions->merge($step->getExtraActions());
+
 		
 		return $actions;
 	}
